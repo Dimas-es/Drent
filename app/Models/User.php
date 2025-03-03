@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -7,10 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Filament\Models\Contracts\HasName;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements HasName
 {
-    use HasFactory, SoftDeletes, Notifiable;
+    use HasApiTokens, HasFactory, SoftDeletes, Notifiable;
 
     protected $table = 'users';
 
